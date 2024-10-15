@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { TripDataService } from '../services/trip-data.service';
 @Component({
@@ -11,7 +16,7 @@ import { TripDataService } from '../services/trip-data.service';
   styleUrl: './add-trip.component.css',
 })
 export class AddTripComponent implements OnInit {
-  addForm!: FormGroup;
+  public addForm!: FormGroup;
   submitted = false;
   constructor(
     private formBuilder: FormBuilder,
