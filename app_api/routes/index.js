@@ -10,6 +10,11 @@ router
    .route('/register')
    .post(authController.register); // POST Method registers user
 
+// define route for login endpoint
+router
+.route('/login')
+.post(authController.login); // POST Method logs in user
+
 // Define route for our trips endpoint
 router
     .route('/trips')
