@@ -1,6 +1,7 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
+const Users = require('../models/user');
 const User = mongoose.model('users');
 
 passport.use(
@@ -10,14 +11,17 @@ passport.use(
         },
         async (username, password, done) => {
             const q = await User.findOne({ email: username }).exec();
-
-            if (!q) { // If the database returned no records, the user doesn't exist.
-                return done(null, false, { message: 'Incorrect Username' });
+            if (!q) {
+                return done(null, false, {
+                    message: 'Incorrect username.',
+                });
             }
-            if (!q.validPassword(password)) { // Validate password
-                return done(null, false, { message: 'Incorrect Password' });
+            if (!q.validPassword(password)) {
+                return done(null, false, {
+                    message: 'Incorrect password.',
+                });
             }
-            return done(null, q); // Everything is good, return user object.
+            return done(null, q);
         }
     )
 );
