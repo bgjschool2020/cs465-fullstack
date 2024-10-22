@@ -5,7 +5,7 @@ This is a project from school, class: SNHU-CS-465.
 
 <br>
 
-**Please see the Software Design Document to see all the details on the project.** 
+**Please see the [Software Design Document](https://github.com/bgjschool2020/cs465-fullstack/blob/main/CS%20465%20Software%20Design%20Document.pdf) to see all the details on the project.** 
 
 
 # Installing and Running the Project
